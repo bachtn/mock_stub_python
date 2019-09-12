@@ -39,6 +39,11 @@ def resize_images(image_list: List[numpy.ndarray]) -> List[numpy.ndarray]:
 
 
 # Save images
+def convert_to_jpeg(image: numpy.ndarray) -> numpy.ndarray:
+    is_successful, jpeg_data = cv2.imencode('.jpeg', image)
+    return jpeg_data
+
+
 def save_images(image_list, image_name_list, folder):
     logging.info(f'Saving {len(image_list)} images in the following folder : {folder}')
     for image, image_name in zip(image_list, image_name_list):
