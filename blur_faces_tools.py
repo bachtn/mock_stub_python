@@ -27,9 +27,7 @@ def rescale_face_boxes(face_boxes, shape):
 def detect_faces_in_images(image_list):
     logging.info(f'Detecting faces in {len(image_list)} images')
     resized_image_list = resize_images(image_list)
-    rescaled_face_boxes_batch = face_recognition.batch_face_locations(
-        resized_image_list, number_of_times_to_upsample=1)
-    # face_boxes_batch = [face_recognition.face_locations(resized_image) for resized_image in resized_image_list]
+    rescaled_face_boxes_batch = [face_recognition.face_locations(resized_image) for resized_image in resized_image_list]
     image_shape_list = [image.shape for image in image_list]
     face_boxes_batch = [rescale_face_boxes(face_boxes, image_shape) for face_boxes, image_shape in
                         zip(rescaled_face_boxes_batch, image_shape_list)]
