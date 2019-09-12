@@ -39,17 +39,8 @@ def resize_images(image_list: List[numpy.ndarray]) -> List[numpy.ndarray]:
 
 
 # Save images
-def convert_to_jpeg(image: numpy.ndarray) -> numpy.ndarray:
-    is_successful, jpeg_data = cv2.imencode('.jpeg', image)
-    if not is_successful:
-        error_message = 'Error encountered while converting image to JPG'
-        logging.error(error_message)
-        raise Exception(error_message)
-    return jpeg_data
-
-
 def save_images(image_list, image_name_list, folder):
     logging.info(f'Saving {len(image_list)} images in the following folder : {folder}')
     for image, image_name in zip(image_list, image_name_list):
         image_path = os.path.join(folder, f'blurred_{image_name}')
-        cv2.imwrite(image_path, image)
+        # cv2.imwrite(image_path, image)
