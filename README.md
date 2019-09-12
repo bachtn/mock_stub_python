@@ -1,3 +1,6 @@
+pytest -vv -p no:warnings
+
+
 # TODO
 * Object qu'on peut controler
 
@@ -14,11 +17,6 @@
 - Loads all the images only one time
 
 
-
-# Tests
-- test_convert_to_jpeg_calls_cv2_imencode_method
-- test_convert_to_jpeg_raises_an_exception_if_the_conversion_fails
-- test_face_recognition_calls_batch_method_to_detect_faces
 
 
 # Senario
