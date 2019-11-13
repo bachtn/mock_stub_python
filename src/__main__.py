@@ -1,5 +1,5 @@
-from blur_faces_tools import detect_faces_in_images, blur_faces_in_images
-from image_tools import load_images, save_images
+from src.blur_faces_tools import detect_faces_in_images, blur_faces_in_images
+from src.image_tools import load_images, save_images
 
 IMAGE_FOLDER = 'images'
 

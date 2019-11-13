@@ -2,7 +2,7 @@ from unittest.mock import patch
 
 import pytest
 
-from image_tools import load_images, save_images, convert_to_jpeg, save_binary_file
+from src.image_tools import load_images, save_images, convert_to_jpeg, save_binary_file
 
 
 @pytest.fixture()

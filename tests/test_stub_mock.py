@@ -1,10 +1,12 @@
 from unittest.mock import patch
 
-from stub_mock import filter_my_data, display, MyClass
+from src.stub_mock import filter_my_data, display, MyClass
 
 """
 Mock
 """
+
+
 # Mock a function
 def test_display_calls_print_message():
     # Given
@@ -39,6 +41,7 @@ def test_display_does_not_call_print_message_when_condition_is_false():
         myObj.display(condition=False)
         assert not myObj_print_message_mock.called
 
+
 # Mock a class function
 # FIXME : if not working remove it
 def test_display_calls_print_message_when_condition_is_true():
@@ -60,6 +63,7 @@ def test_my_static_method_does_not_call_print_message_when_condition_is_false():
         MyClass.my_static_method(condition=False)
         assert not myObj_print_message_mock.called
 
+
 """
 Stub
 """
@@ -71,6 +75,7 @@ def test_filter_should_call_get_data():
         filter_my_data("in stock")
         # Then
         get_data_mock.assert_called()
+
 
 def test_filter_should_filter_data_properly():
     # Given

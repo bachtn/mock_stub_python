@@ -5,7 +5,7 @@ import cv2
 import face_recognition
 import numpy
 
-from image_tools import resize_images
+from src.image_tools import resize_images
 
 logging.basicConfig(level='INFO')
 
